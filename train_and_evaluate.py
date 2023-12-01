@@ -80,14 +80,23 @@ def fit_model(model,windows,label):
     return model
 
 if __name__ == '__main__':
+    print('Loading training data')
     data = load_data('train_data.csv') # load data
+    print('Segmenting data')
     windows,label = segmentData(data, w=2, o=0.75, Fs=40) # segment data: w = window size (in seconds, it should be 2 seconds), o = overlap (in percentage, 0.75 is 75%), Fs = sampling frequency (it should be 40 Hz)
+    print('Loading model --> ', end='')
     model = load_model()  # load model
+    print('compiling --> ', end='')
     model = compile_model(model,lr=0.01,wd=0.002) # compile model: lr = learning rate, wd = weight decay
+    print('fitting')
     model = fit_model(model,windows,label) # fit model
+    print('Loading test data')
     testData = load_data('test_data.csv') # Load test data
+    print('Segmenting test data')
     testData,testLabel = segmentData(testData, w=2, o=0.75, Fs=40) # segment test data
+    print('Predicting...')
     prediction = model.predict([testData,testData,testData]) # predict test data
+    print('Saving test label and prediction')
     prediction.tofile('test_prediction.csv', sep=',') # save prediction
     testLabel.tofile('test_label.csv',sep=',') # save label
-    print('Saved')
+    print('Done')
