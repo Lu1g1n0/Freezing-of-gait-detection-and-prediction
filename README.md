@@ -59,4 +59,4 @@ Luigi Borzì, Luis Sigcha, Daniel Rodríguez-Martín, Gabriella Olmo, Real-time 
 
 For any questions or inquiries, feel free to contact:
 
-- Luigi Borzì: [luigi.borzi@email.com](mailto:luigi.borzi@email.com)
+- Luigi Borzì: [luigi.borzi@email.com](mailto:luigi.borzi@polito.it)
