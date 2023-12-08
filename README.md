@@ -15,7 +15,17 @@ The script takes two CSV files as input:
 - `train_data.csv` for training data
 - `test_data.csv` for testing data
 
-These files should contain a table with N samples and 4 columns. The 4 columns contain acceleration data (`accV`, `accAP`, `accML`) and the Freezing of Gait label (`fogLabel`). N samples depend on the amount of data, and data should be sampled at 40 Hz.
+These files should contain a table with N samples and 4 columns. The 4 columns contain acceleration data (`accX`, `accY`, `accZ`) and the Freezing of Gait label (`fogLabel`). N samples depend on the amount of data, and data should be sampled at 40 Hz.
+
+#### Example Data Format
+
+Here's an example of the expected format for the CSV files:
+
+'''csv
+accX,accY,accZ,fogLabel
+-0.123,0.456,0.789,0
+-0.987,0.654,0.321,1
+0.111,-0.222,0.333,0'''
 
 ### Output
 
