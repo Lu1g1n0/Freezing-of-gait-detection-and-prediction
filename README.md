@@ -25,7 +25,8 @@ Here's an example of the expected format for the CSV files:
 accX,accY,accZ,fogLabel
 -0.123,0.456,0.789,0
 -0.987,0.654,0.321,1
-0.111,-0.222,0.333,0'''
+0.111,-0.222,0.333,0
+...
 
 ### Output
 
