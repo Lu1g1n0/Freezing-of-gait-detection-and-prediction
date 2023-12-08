@@ -21,7 +21,7 @@ These files should contain a table with N samples and 4 columns. The 4 columns c
 
 Here's an example of the expected format for the CSV files:
 
-'''csv
+```csv
 accX,accY,accZ,fogLabel
 -0.123,0.456,0.789,0
 -0.987,0.654,0.321,1
