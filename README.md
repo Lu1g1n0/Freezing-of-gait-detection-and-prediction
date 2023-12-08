@@ -8,6 +8,8 @@ The script "train_and_evaluate.py" trains and tests a multi-head convolutional n
 
 Luigi Borzì, Luis Sigcha, Daniel Rodríguez-Martín, Gabriella Olmo, Real-time detection of freezing of gait in Parkinson’s disease using multi-head convolutional neural networks and a single inertial sensor, Artificial Intelligence in Medicine 135:102459 (2023). [DOI: 10.1016/j.artmed.2022.102459](https://doi.org/10.1016/j.artmed.2022.102459).
 
+![Figure 1: Schematic of the multi-head convolutional neural network](C:/Users/luigi/Downloads/architecture_picture-1.png)
+
 ### Input
 
 The script takes two CSV files as input:
