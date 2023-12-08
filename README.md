@@ -4,11 +4,14 @@ Explore a comprehensive collection of scripts and datasets dedicated to the dete
 
 ## Train and Evaluate Script
 
-The script "train_and_evaluate.py" trains and tests a multi-head convolutional neural network developed for freezing of gait detection from inertial data. The model is detailed in the following article:
+The script "train_and_evaluate.py" trains and tests a multi-head convolutional neural network developed for freezing of gait detection from inertial data. 
+The model is schematically represented in the figure below.
 
-Luigi Borzì, Luis Sigcha, Daniel Rodríguez-Martín, Gabriella Olmo, Real-time detection of freezing of gait in Parkinson’s disease using multi-head convolutional neural networks and a single inertial sensor, Artificial Intelligence in Medicine 135:102459 (2023). [DOI: 10.1016/j.artmed.2022.102459](https://doi.org/10.1016/j.artmed.2022.102459).
+<img src="cnn_architecture.png" alt="Figure 1: Schematic of the multi-head convolutional neural network" width="50%">
 
-![Figure 1: Schematic of the multi-head convolutional neural network](C:/Users/luigi/Downloads/architecture_picture-1.png)
+It consists of a three-headed CNN block connected to dense classification layers. Each head consists of two convolutional layers and two max-pooling layers. Each of these heads simultaneously processes the input using kernels of different sizes. The input has size 80 timesteps × 3 channels, where 80 correponds to the windows size (2-second window, sampling frequency = 40 Hz) and 3 is the number of components of the 3-axis accelerometer. The outputs of the CNN heads are flattened and concatenated to compose a vector feeding a single dense layer (16 units and a dropout rate of 0.5) and a final output layer with two outputs corresponding to the probability of FoG or no-FoG, respectively. The convolutional layers have 16 filters and ReLU activations each, with different kernel sizes in each head. Specifically, kernel sizes of 6 and 3 were selected in the two convolutional layers of the first head, 12 and 6 in the second head, and 18 and 9 in the third head. The stride was set to 1 in all convolutional layers without padding to gradually reduce the size of the input signal. In addition, a pool size of 3 and a dropout rate of 0.5 were used for all
+convolutional layers, and the regularization term was set to 0.1 in the softmax layer. 
+
 
 ### Input
 
@@ -48,7 +51,7 @@ The test label is extracted from the `test_data.csv` file. The prediction is obt
 
 ## Citation
 
-If you use this toolkit in your research, please cite the following paper.
+Please cite the following paper in your publications if this repository helps your research.
 
 Luigi Borzì, Luis Sigcha, Daniel Rodríguez-Martín, Gabriella Olmo, Real-time detection of freezing of gait in Parkinson’s disease using multi-head convolutional neural networks and a single inertial sensor, Artificial Intelligence in Medicine 135:102459 (2023). [DOI: 10.1016/j.artmed.2022.102459](https://doi.org/10.1016/j.artmed.2022.102459).
 
